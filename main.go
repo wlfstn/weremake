@@ -10,14 +10,18 @@ import (
 func main() {
 	fmt.Println("Hello, this is weremake")
 
-	initFlag := flag.String("init", "myProject", "Initialize the application")
 	flag.Parse()
 
+	args := flag.Args()
 	weremakeFile := "weremake.toml"
-	if *initFlag != "" {
+	if args[0] == "init" {
 		if _, err := os.Stat(weremakeFile); os.IsNotExist(err) {
 			fmt.Println("No weremake file found, generating one.")
-			wereinit.InitToml(*initFlag)
+			if len(args) > 1 && len(args[1]) > 0 {
+				wereinit.InitToml(args[1])
+			} else {
+				wereinit.InitToml("MyProject")
+			}
 		} else {
 			fmt.Println("This directory already contains a weremake file. Operation canceled")
 			os.Exit(1)
