@@ -1,4 +1,4 @@
-package wereinit
+package werecreate
 
 import (
 	"fmt"
@@ -9,13 +9,25 @@ import (
 )
 
 type WereMakeSyntax struct {
-	ProjectName string
+	PROJECT_NAME  string
+	CXX_STANDARD  int8
+	SOURCE        []string
+	HEADER        []string
+	CREATE_STATIC map[string]string
+	LINK          map[string][]string
 }
 
 func InitToml(prjName string) {
 
 	newWereMake := WereMakeSyntax{
-		ProjectName: prjName,
+		PROJECT_NAME: prjName,
+		CXX_STANDARD: 20,
+		SOURCE: []string{
+			"main.cpp",
+		},
+		HEADER:        []string{},
+		CREATE_STATIC: map[string]string{},
+		LINK:          map[string][]string{},
 	}
 	file, err := os.Create("weremake.toml")
 	if err != nil {
