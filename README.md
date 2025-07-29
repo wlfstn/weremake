@@ -6,6 +6,5 @@ A weremake setup is a simple, friendly to understand that transforms into a beas
 Simple, the unhappy result of working with CMake. The lack of makefile on Windows.  
 why not? Why does C/C++ have to be difficult to work with?  
   
-# WereMake Development
-WereMake is built using golang for it's easy project setup and complete build system.  
-It's simple yet powerful language design, it's easy to use CLI toolchain, and single binary executable output.
+# WereMake Development  
+Project originated as a golang one, then migrated to C++ for more coding freedom and complex designs.
