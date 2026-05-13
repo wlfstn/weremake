@@ -1,0 +1,3 @@
+[submodule "src/vendor/werelib"]
+	path = src/vendor/werelib
+	url = https://github.com/wlfstn/werelib

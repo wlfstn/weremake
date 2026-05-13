@@ -8,3 +8,5 @@ why not? Why does C/C++ have to be difficult to work with?
   
 # WereMake Development  
 Project originated as a golang one, then migrated to C++ for more coding freedom and complex designs.
+
+# Syntax Design
