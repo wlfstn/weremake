@@ -26,7 +26,8 @@ set_source_files_properties(${MODULE_FILES} PROPERTIES
 	COMPILE_OPTIONS "$<$<CONFIG:Release>:-fno-exceptions>"
 )
 
-# add_subdirectory(src/vendor/glm)
+# set(WERELIB_SHARED ON CACHE BOOL "" FORCE)
+add_subdirectory(src/vendor/werelib)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 target_include_directories(${PROJECT_NAME} PRIVATE src/include src/vendor/stb)
@@ -43,4 +44,5 @@ target_sources(${PROJECT_NAME} PRIVATE
 
 target_link_libraries(
 	${PROJECT_NAME} PRIVATE
+	werelib
 )
