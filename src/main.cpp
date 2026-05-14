@@ -2,7 +2,9 @@
 
 import cli;
 
-int main() {
+int main(int argc, char** argv) {
 	std::println("Hello");
 	std::println("{}", h);
+
+	cli(argc, argv);
 }
